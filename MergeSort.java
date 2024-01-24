@@ -1,2 +1,2 @@
-public class MergeSort<T extends Comparable<T>> implements IBasicSort<T> {
+public class MergeSort<T extends Comparable<T>> implements ISort<T> {
 }

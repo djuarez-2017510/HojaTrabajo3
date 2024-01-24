@@ -1,2 +1,2 @@
-public class RadixSort<T extends Comparable<T>> implements IBasicSort<T> {
+public class RadixSort<T extends Comparable<T>> implements ISort<T> {
 }
