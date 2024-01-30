@@ -6,6 +6,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         GnomeSort<Integer> gnomeSort = new GnomeSort<>();
+        QuickSort <Integer> quickSort = new QuickSort<>();
+
         Scanner scanner = new Scanner(System.in);
 
         try {
@@ -40,14 +42,25 @@ public class Main {
                 int numero = Integer.parseInt(linea);
                 numerosArray[indice] = numero;
                 indice++;
+
             }
+
 
         } catch (FileNotFoundException e) {
             // En caso de que el archivo no se encuentre
             e.printStackTrace();
         }
+        Integer[] numerosArrayCopia = Arrays.copyOf(numerosArray, numerosArray.length);
+
+        // Ordenar el array copiado
+        Arrays.sort(numerosArrayCopia);
+
+
+        //gnomeSort.sort(numerosArray);
+        //gnomeSort.sort(numerosArrayCopia);
 
         while (true) {
+
             System.out.println("\n*** Menú ***");
             System.out.println("\nEliga el sort que desea utilizar");
             System.out.println("1. Gnome sort");
@@ -63,10 +76,17 @@ public class Main {
             switch (choice) {
                 case 1:
                 gnomeSort.sort(numerosArray);
+                gnomeSort.sort(numerosArrayCopia);
+
+
                     break;
                 case 2:
+
                     break;
                 case 3:
+                    quickSort.sort(numerosArray);
+                    quickSort.sort(numerosArrayCopia);
+
                     break;
                 case 4:
                     break;
@@ -85,4 +105,3 @@ public class Main {
         }
     }
 }
-

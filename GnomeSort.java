@@ -19,10 +19,8 @@ public class GnomeSort<T extends Comparable<T>> implements ISort<T>{
         }
 
         return Arr;
-    }
-    public String Gnomename(){
-        return "Gnome Sort";
-    }
-    }
 
+
+        }
+    }
 
