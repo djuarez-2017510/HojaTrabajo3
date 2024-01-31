@@ -57,7 +57,9 @@ public class Main {
 
         // Ordenar el array copiado
         Arrays.sort(numerosArrayCopia);
-      
+
+
+
 
 
 
@@ -77,7 +79,7 @@ public class Main {
             System.out.println("0. Salir");
 
             try {
-                
+
                 int choice = scanner.nextInt();
             switch (choice) {
                 case 1:
@@ -85,17 +87,21 @@ public class Main {
                 //Array ya ordenado
                 gnomeSort.sort(numerosArrayCopia);
 
+                System.out.println("Array ordenado ✔");
+
                     break;
                 case 2:
                     mergeSort.sort(numerosArray);
                     //Array ya ordenado
                     mergeSort.sort(numerosArrayCopia);
+                    System.out.println("Array ordenado ✔");
 
                     break;
                 case 3:
                     quickSort.sort(numerosArray);
                     //Array ya ordenado
                     quickSort.sort(numerosArrayCopia);
+                    System.out.println("Array ordenado ✔");
 
                     break;
                 case 4:
@@ -103,17 +109,23 @@ public class Main {
                     //Array ya ordenado
                     radixSort.sort(numerosArrayCopia);
 
+                    System.out.println("Array ordenado ✔");
+
                     break;
                 case 5:
                     bucketSort.sort(numerosArray);
                     //Array ya ordenado
                     bucketSort.sort(numerosArrayCopia);
+                    System.out.println("Array ordenado ✔");
                     break;
                 case 0:
                 System.out.println("Saliendo del programa");
                 System.exit(0);
+                break;
                 default:
                     System.out.println("No es una opción valida");
+
+
             }
             } catch (Exception e) {
                 System.out.println("Debe ingresar un valor numerico");
