@@ -8,6 +8,8 @@ public class Main {
         GnomeSort<Integer> gnomeSort = new GnomeSort<>();
         QuickSort <Integer> quickSort = new QuickSort<>();
         MergeSort<Integer> mergeSort= new MergeSort<>();
+        RadixSort<Integer> radixSort = new RadixSort<>();
+        BucketSort<Integer> bucketSort = new BucketSort<>();
 
         Scanner scanner = new Scanner(System.in);
 
@@ -15,7 +17,7 @@ public class Main {
             FileWriter writer = new FileWriter("random.txt");
             Set<Integer> numeros = new HashSet<>();
             Random random = new Random();
-            while (numeros.size() < 15) {
+            while (numeros.size() < 3000) {
                 int randomnum = random.nextInt(5001);
                 if (numeros.add(randomnum)) {
                     writer.write(randomnum + "\n");
@@ -27,7 +29,7 @@ public class Main {
         }
 
         // Crear un array de tamaño 3000
-        Integer[] numerosArray = new Integer[15];
+        Integer[] numerosArray = new Integer[3000];
         int indice = 0;
 
         try {
@@ -38,7 +40,7 @@ public class Main {
             Scanner filescanner = new Scanner(archivo);
 
             // Leer el archivo línea por línea y agregar los números al array
-            while (filescanner.hasNextLine() && indice < 15) {
+            while (filescanner.hasNextLine() && indice < 3000) {
                 String linea = filescanner.nextLine();
                 int numero = Integer.parseInt(linea);
                 numerosArray[indice] = numero;
@@ -83,14 +85,11 @@ public class Main {
                 //Array ya ordenado
                 gnomeSort.sort(numerosArrayCopia);
 
-
-
                     break;
                 case 2:
                     mergeSort.sort(numerosArray);
                     //Array ya ordenado
                     mergeSort.sort(numerosArrayCopia);
-
 
                     break;
                 case 3:
@@ -98,11 +97,17 @@ public class Main {
                     //Array ya ordenado
                     quickSort.sort(numerosArrayCopia);
 
-
                     break;
                 case 4:
+                    radixSort.sort(numerosArray);
+                    //Array ya ordenado
+                    radixSort.sort(numerosArrayCopia);
+
                     break;
                 case 5:
+                    bucketSort.sort(numerosArray);
+                    //Array ya ordenado
+                    bucketSort.sort(numerosArrayCopia);
                     break;
                 case 0:
                 System.out.println("Saliendo del programa");
